@@ -34,83 +34,84 @@ const FreeAudit: React.FC = () => {
   };
 
   return (
-    <div className="animate-fade-in">
+    <div className="animate-fade-in bg-primary text-contrast">
       {/* Hero Header */}
-      <section className="bg-slate-900 text-white py-20 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Get Your Free SEO Overview</h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+      <section className="bg-primary text-contrast py-32 text-center relative overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-contrast/5 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter">Free SEO Overview</h1>
+          <p className="text-xl text-muted max-w-2xl mx-auto font-light">
             Get a high-level snapshot of your website's performance. We'll check the essentials to see if you're on the right track.
           </p>
         </div>
       </section>
 
-      <section className="py-20 bg-slate-50">
+      <section className="py-24 bg-secondary text-contrast rounded-t-[3rem] border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-5 gap-16">
             {/* Left Side: Value Prop */}
             <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">What's Included in Free Audit</h2>
-              <div className="space-y-8">
+              <h2 className="text-3xl font-bold text-contrast mb-10">What's Included</h2>
+              <div className="space-y-10">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-accent flex-shrink-0 mr-4">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-contrast flex-shrink-0 mr-4 shadow-sm border border-border">
                     <BarChart2 size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Basic Health Check</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">Automated scan for critical errors, broken links, and server response codes.</p>
+                    <h3 className="font-bold text-contrast text-lg mb-2">Basic Health Check</h3>
+                    <p className="text-muted text-sm leading-relaxed">Automated scan for critical errors, broken links, and server response codes.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-accent flex-shrink-0 mr-4">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-contrast flex-shrink-0 mr-4 shadow-sm border border-border">
                     <FileSearch size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 mb-2">On-Page Fundamentals</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">Review of your homepage title tags, meta descriptions, and header structure.</p>
+                    <h3 className="font-bold text-contrast text-lg mb-2">On-Page Fundamentals</h3>
+                    <p className="text-muted text-sm leading-relaxed">Review of your homepage title tags, meta descriptions, and header structure.</p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-accent flex-shrink-0 mr-4">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-contrast flex-shrink-0 mr-4 shadow-sm border border-border">
                     <Smartphone size={24} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 mb-2">Mobile Compatibility</h3>
-                    <p className="text-slate-600 text-sm leading-relaxed">Basic check to ensure your site renders correctly on mobile devices.</p>
+                    <h3 className="font-bold text-contrast text-lg mb-2">Mobile Compatibility</h3>
+                    <p className="text-muted text-sm leading-relaxed">Basic check to ensure your site renders correctly on mobile devices.</p>
                   </div>
                 </div>
               </div>
 
               {/* Paid Upsell Box */}
-               <div className="mt-12 bg-blue-50 p-6 rounded-xl border border-blue-100 shadow-sm">
-                <div className="flex items-center mb-3 text-accent">
+               <div className="mt-16 bg-primary p-8 rounded-2xl border border-border shadow-sm">
+                <div className="flex items-center mb-3 text-contrast">
                     <AlertCircle size={20} className="mr-2" />
                     <h4 className="font-bold text-lg">Need a Deep Dive?</h4>
                 </div>
-                <p className="text-slate-700 text-sm mb-4 leading-relaxed">
+                <p className="text-muted text-sm mb-4 leading-relaxed">
                     Advanced services like <strong>Keyword Gap Analysis</strong>, <strong>Competitor Spying</strong>, and <strong>Deep Backlink Audits</strong> are reserved for our paid consulting packages.
                 </p>
-                <p className="text-slate-600 text-xs italic">
+                <p className="text-muted/70 text-xs italic">
                     This free audit is a preliminary health check only.
                 </p>
               </div>
 
-              <div className="mt-6 bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-                <h4 className="font-bold text-slate-900 mb-2">Trusted Confidentiality</h4>
-                <p className="text-slate-500 text-sm">Your data is safe with us. We never share your information with third parties.</p>
+              <div className="mt-6 bg-primary p-6 rounded-xl border border-border shadow-sm">
+                <h4 className="font-bold text-contrast mb-2">Trusted Confidentiality</h4>
+                <p className="text-muted text-sm">Your data is safe with us. We never share your information with third parties.</p>
               </div>
             </div>
 
             {/* Right Side: Form */}
             <div className="lg:col-span-3">
-              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-10 border border-slate-100">
-                <h2 className="text-2xl font-bold text-slate-900 mb-2">Request Your Free Overview</h2>
-                <p className="text-slate-600 mb-8 text-sm">Please provide your details below.</p>
+              <div className="bg-primary rounded-3xl shadow-2xl p-8 md:p-12 border border-border">
+                <h2 className="text-3xl font-bold text-contrast mb-2">Request Audit</h2>
+                <p className="text-muted mb-10 text-sm">Please provide your details below.</p>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name *</label>
+                      <label htmlFor="name" className="block text-sm font-bold text-contrast mb-2">Full Name *</label>
                       <input
                         type="text"
                         id="name"
@@ -118,12 +119,12 @@ const FreeAudit: React.FC = () => {
                         required
                         value={formData.name}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-border focus:ring-2 focus:ring-contrast focus:border-contrast outline-none transition-colors bg-secondary/50 text-contrast"
                         placeholder="John Doe"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email Address *</label>
+                      <label htmlFor="email" className="block text-sm font-bold text-contrast mb-2">Email Address *</label>
                       <input
                         type="email"
                         id="email"
@@ -131,7 +132,7 @@ const FreeAudit: React.FC = () => {
                         required
                         value={formData.email}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-border focus:ring-2 focus:ring-contrast focus:border-contrast outline-none transition-colors bg-secondary/50 text-contrast"
                         placeholder="john@company.com"
                       />
                     </div>
@@ -139,7 +140,7 @@ const FreeAudit: React.FC = () => {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="businessName" className="block text-sm font-medium text-slate-700 mb-1">Business Name *</label>
+                      <label htmlFor="businessName" className="block text-sm font-bold text-contrast mb-2">Business Name *</label>
                       <input
                         type="text"
                         id="businessName"
@@ -147,12 +148,12 @@ const FreeAudit: React.FC = () => {
                         required
                         value={formData.businessName}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-border focus:ring-2 focus:ring-contrast focus:border-contrast outline-none transition-colors bg-secondary/50 text-contrast"
                         placeholder="Your Company LLC"
                       />
                     </div>
                     <div>
-                      <label htmlFor="niche" className="block text-sm font-medium text-slate-700 mb-1">Business Niche / Industry *</label>
+                      <label htmlFor="niche" className="block text-sm font-bold text-contrast mb-2">Business Niche / Industry *</label>
                       <input
                         type="text"
                         id="niche"
@@ -160,15 +161,15 @@ const FreeAudit: React.FC = () => {
                         required
                         value={formData.niche}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
-                        placeholder="e.g. SaaS, Real Estate, E-commerce"
+                        className="w-full px-4 py-3 rounded-xl border border-border focus:ring-2 focus:ring-contrast focus:border-contrast outline-none transition-colors bg-secondary/50 text-contrast"
+                        placeholder="e.g. SaaS, Real Estate"
                       />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="websiteName" className="block text-sm font-medium text-slate-700 mb-1">Website Name *</label>
+                      <label htmlFor="websiteName" className="block text-sm font-bold text-contrast mb-2">Website Name *</label>
                       <input
                         type="text"
                         id="websiteName"
@@ -176,12 +177,12 @@ const FreeAudit: React.FC = () => {
                         required
                         value={formData.websiteName}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-border focus:ring-2 focus:ring-contrast focus:border-contrast outline-none transition-colors bg-secondary/50 text-contrast"
                         placeholder="My Awesome Site"
                       />
                     </div>
                     <div>
-                      <label htmlFor="websiteUrl" className="block text-sm font-medium text-slate-700 mb-1">Website URL *</label>
+                      <label htmlFor="websiteUrl" className="block text-sm font-bold text-contrast mb-2">Website URL *</label>
                       <input
                         type="url"
                         id="websiteUrl"
@@ -189,31 +190,31 @@ const FreeAudit: React.FC = () => {
                         required
                         value={formData.websiteUrl}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-border focus:ring-2 focus:ring-contrast focus:border-contrast outline-none transition-colors bg-secondary/50 text-contrast"
                         placeholder="https://www.example.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="reason" className="block text-sm font-medium text-slate-700 mb-1">Why are you choosing us? (Optional)</label>
+                    <label htmlFor="reason" className="block text-sm font-bold text-contrast mb-2">Why are you choosing us? (Optional)</label>
                     <textarea
                       id="reason"
                       name="reason"
                       rows={3}
                       value={formData.reason}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-colors resize-none"
-                      placeholder="e.g. I need help with technical SEO, I want more local traffic..."
+                      className="w-full px-4 py-3 rounded-xl border border-border focus:ring-2 focus:ring-contrast focus:border-contrast outline-none transition-colors resize-none bg-secondary/50 text-contrast"
+                      placeholder="e.g. I need help with technical SEO..."
                     ></textarea>
                   </div>
 
-                  <Button type="submit" fullWidth variant="primary" className="py-4 text-lg shadow-lg">
+                  <Button type="submit" fullWidth variant="primary" className="py-5 text-lg shadow-xl">
                     Analyze My Website
                   </Button>
                   
                   <div className="text-center mt-4">
-                    <p className="text-xs text-slate-400">By submitting this form, you agree to our Privacy Policy.</p>
+                    <p className="text-xs text-muted">By submitting this form, you agree to our Privacy Policy.</p>
                   </div>
                 </form>
               </div>
@@ -223,9 +224,9 @@ const FreeAudit: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-primary text-contrast border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">Common Questions</h2>
+          <h2 className="text-3xl font-bold text-center text-contrast mb-12">Common Questions</h2>
           <FAQ items={CONTACT_FAQS} />
         </div>
       </section>

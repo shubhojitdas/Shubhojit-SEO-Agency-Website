@@ -20,13 +20,22 @@ const Button: React.FC<ButtonProps> = ({
   type = 'button',
   fullWidth = false
 }) => {
-  const baseStyles = "inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseStyles = "inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed tracking-wide";
   
   const variants = {
-    primary: "bg-accent text-white hover:bg-accentHover focus:ring-accent shadow-lg shadow-accent/30",
-    secondary: "bg-primary text-white hover:bg-slate-800 focus:ring-primary",
-    outline: "border-2 border-slate-200 text-slate-700 bg-transparent hover:border-accent hover:text-accent focus:ring-accent",
-    white: "bg-white text-primary hover:bg-gray-50 focus:ring-white shadow-md"
+    // Primary: High contrast against background
+    primary: "bg-contrast text-primary hover:bg-contrast/90 shadow-[0_0_15px_rgba(var(--text-contrast),0.3)] hover:shadow-[0_0_25px_rgba(var(--text-contrast),0.5)] border border-transparent font-bold",
+    
+    // Secondary: Subtler background
+    secondary: "bg-secondary text-contrast hover:bg-border border border-border",
+    
+    // Outline: Border only
+    outline: "border border-contrast/30 text-contrast bg-transparent hover:border-contrast hover:bg-contrast/10",
+    
+    // Explicit White (Useful for dark sections specifically, might need adjustment if light mode uses this on white bg)
+    // In strict theme mode, 'white' should usually mean 'contrast' if on primary bg, or 'primary' if on contrast bg.
+    // For now, let's map it to Surface/Contrast logic.
+    white: "bg-surface text-contrast hover:bg-secondary border border-transparent shadow-lg font-bold"
   };
 
   const widthClass = fullWidth ? 'w-full' : '';

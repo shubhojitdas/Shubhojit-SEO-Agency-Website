@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 interface FAQItemProps {
   question: string;
@@ -10,22 +10,23 @@ interface FAQItemProps {
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, toggle }) => {
   return (
-    <div className="border-b border-slate-200 last:border-0">
+    <div className="border-b border-border last:border-0">
       <button
-        className="w-full flex justify-between items-center py-6 text-left focus:outline-none"
+        className="w-full flex justify-between items-center py-8 text-left focus:outline-none group"
         onClick={toggle}
       >
-        <span className={`text-lg font-medium ${isOpen ? 'text-accent' : 'text-slate-800'} transition-colors`}>
+        <span className={`text-xl font-medium pr-8 transition-colors duration-300 ${isOpen ? 'text-contrast' : 'text-muted group-hover:text-contrast'}`}>
           {question}
         </span>
-        {isOpen ? <ChevronUp className="text-accent" /> : <ChevronDown className="text-slate-400" />}
+        <div className={`p-2 rounded-full border transition-all duration-300 ${isOpen ? 'bg-contrast text-primary border-contrast rotate-180' : 'bg-transparent text-muted border-border group-hover:border-contrast group-hover:text-contrast'}`}>
+            <ChevronDown size={20} />
+        </div>
       </button>
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'
-        }`}
-      >
-        <p className="text-slate-600 leading-relaxed">{answer}</p>
+      
+      <div className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
+        <div className="overflow-hidden">
+          <p className="text-muted leading-relaxed pb-8 text-lg">{answer}</p>
+        </div>
       </div>
     </div>
   );
@@ -43,7 +44,7 @@ const FAQ: React.FC<FAQProps> = ({ items }) => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="max-w-3xl mx-auto w-full">
       {items.map((item, index) => (
         <FAQItem
           key={index}
